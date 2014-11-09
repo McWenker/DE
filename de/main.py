@@ -4,13 +4,17 @@ from constants import *
 from random import choice
 from screen import Screen
 from map import Map
+from resourceManager import ResourceManager
+from textStyle import TextStyle
 
 # initialize that shit
 pygame.init()
-font = pygame.font.Font(None, 18)
+
 FPS_clock = pygame.time.Clock()
 map = Map()
+textStyle = TextStyle()
 screen = Screen()
+resourceManager = ResourceManager()
 
 # store coords of mouse
 mouse_x = 0 
@@ -40,7 +44,8 @@ while True:
 		elif event.type == MOUSEBUTTONUP:
 			mouse_x, mouse_y = event.pos
 			mouse_click = True
-		elif event.type == KEYDOWN:
+		elif event.type == KEYDOWN:			
+			resourceManager.add('adamantium',1)
 			if event.key == K_ESCAPE:
 				terminate()
 			
@@ -61,5 +66,7 @@ while True:
 		screen.draw_highlight_box(highlightBox[0], highlightBox[1])
 
 	# redraw screen
+	screen.drawList(resourceManager.drawResources(), textStyle.lineHeight, [50,50])
 	pygame.display.update()
 	FPS_clock.tick(FPS)
+	

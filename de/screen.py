@@ -1,7 +1,7 @@
 import pygame
-
 from constants import *
 from map import Map
+import textStyle
 
 class Screen(object):
 	# draws the map and sprites to screen
@@ -42,3 +42,11 @@ class Screen(object):
 	def draw_highlight_box(self, tile_x, tile_y):
 		left, top = self.top_left_convert(tile_x, tile_y)
 		pygame.draw.rect(self.screen, WHITE, (left-5, top-5, TILE_SIZE+10, TILE_SIZE+10),4)
+
+	def drawList(self, list, lineHeight, loc):
+		for item in list:
+			self.screen.blit(item, loc)
+			loc[1] += lineHeight
+
+	def drawText(self, text, loc):
+		self.screen.blit(text, loc)
