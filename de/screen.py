@@ -10,7 +10,6 @@ class Screen(object):
 	def __init__(self):
 		self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 		pygame.display.set_caption('SPACE TYCOON')
-		self.font = pygame.font.SysFont(None, 48)
 
 	def draw_board(self, board, passable):
 		# draws all boxes in covered or revealed state
