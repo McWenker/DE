@@ -6,13 +6,25 @@ from screen import Screen
 from map import Map
 from resourceManager import ResourceManager
 from textStyle import TextStyle
+from unit import Unit
 
 # initialize that shit
 pygame.init()
 
 FPS_clock = pygame.time.Clock()
 map = Map()
+
+
+# init our units
+unit = Unit(WHITE, 50, 50)
+# unit_list = pygame.sprite.Group()
+# unit_list.add(unit)
+
+
+# init our style
 textStyle = TextStyle()
+
+# init the interface
 screen = Screen()
 resourceManager = ResourceManager()
 
@@ -29,6 +41,8 @@ def terminate():
 	pygame.quit()
 	sys.exit()
 
+sizething = 50
+
 ## MAIN GAME LOOP ##
 while True:
 	mouse_click = False
@@ -44,6 +58,7 @@ while True:
 		elif event.type == MOUSEBUTTONUP:
 			mouse_x, mouse_y = event.pos
 			mouse_click = True
+			unit.setDestination(event.pos)
 		elif event.type == KEYDOWN:			
 			resourceManager.add('adamantium',1)
 			if event.key == K_ESCAPE:
@@ -65,8 +80,12 @@ while True:
 	if highlightBox[0] != None and highlightBox[1] != None:
 		screen.draw_highlight_box(highlightBox[0], highlightBox[1])
 
+
+	unit.move()
 	# redraw screen
 	screen.drawList(resourceManager.drawResources(), textStyle.lineHeight, [50,50])
+	# unit_list.draw(screen)
+	screen.screen.blit(unit.image, unit.rect)
 	pygame.display.update()
 	FPS_clock.tick(FPS)
 	
