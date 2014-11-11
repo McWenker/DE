@@ -81,7 +81,7 @@ while True:
 		screen.draw_highlight_box(highlightBox[0], highlightBox[1])
 
 
-	unit.move()
+	unit.updatePos()
 	# redraw screen
 	screen.drawList(resourceManager.drawResources(), textStyle.lineHeight, [50,50])
 	# unit_list.draw(screen)
