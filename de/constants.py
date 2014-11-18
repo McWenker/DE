@@ -1,7 +1,7 @@
-ROWS = 15
-COLUMNS = 15
-TILE_SIZE = 32
-GAP_SIZE = 3 # space between tiles
+ROWS = 40
+COLUMNS = 40
+TILE_SIZE = 16
+GAP_SIZE = 1 # space between tiles
 FPS = 40
 SCREEN_WIDTH = 1024
 SCREEN_HEIGHT = 768
@@ -10,6 +10,9 @@ Y_MARG = int((SCREEN_HEIGHT - (ROWS * (TILE_SIZE + GAP_SIZE)))/2)
 
 # colors
 RED = (255, 0, 0)
-BLUE = (0, 0, 255)
+BLUE = (70, 130, 180)
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
+BROWN = (139, 69, 19)
+GREEN = (107, 142, 35)
+GREY = (139, 134, 130)

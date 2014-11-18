@@ -19,8 +19,7 @@ class Unit(pygame.sprite.Sprite):
 		self.speed = 10
 		
 
-		self.image = pygame.Surface([self.width, self.height])
-		self.image.fill(self.color)
+		self.image = pygame.image.load('worker.pn')
 
 		self.rect = self.image.get_rect()
 		self.currentpos = Vec2d([self.rect.x, self.rect.y])
@@ -45,8 +44,8 @@ class Unit(pygame.sprite.Sprite):
 			else:
 				self.currentpos = endpos
 
-			self.rect.x = self.currentpos[0]
-			self.rect.y = self.currentpos[1]
+			self.rect.centerx = self.currentpos[0]
+			self.rect.centery = self.currentpos[1]
 		
 
 

@@ -3,7 +3,7 @@ from pygame.locals import *
 from constants import *
 from random import choice
 from screen import Screen
-from map import Map
+from mapgen import Map
 from resourceManager import ResourceManager
 from textStyle import TextStyle
 from unit import Unit
@@ -12,11 +12,11 @@ from unit import Unit
 pygame.init()
 
 FPS_clock = pygame.time.Clock()
-map = Map()
+gamemap = Map()
 
 
 # init our units
-unit = Unit(WHITE, 50, 50)
+unit = Unit(WHITE, 16, 32)
 # unit_list = pygame.sprite.Group()
 # unit_list.add(unit)
 
@@ -33,8 +33,8 @@ mouse_x = 0
 mouse_y = 0
 
 # 0 = impassable, for now
-passable_tiles = map.get_passable_tiles(False)
-main_board = map.generate_map()
+passable_tiles = gamemap.get_passable_tiles(False)
+main_map = gamemap.generate_map()
 highlightBox = (None,None)
 
 def terminate():
@@ -47,7 +47,7 @@ sizething = 50
 while True:
 	mouse_click = False
 	screen.screen.fill(BLACK)
-	screen.draw_board(main_board, passable_tiles)
+	screen.draw_map(main_map, passable_tiles)
 	
 	for event in pygame.event.get(): # event handle loop
 		if event.type == QUIT or (event.type == K_UP and event.key == K_ESCAPE):
@@ -83,7 +83,7 @@ while True:
 
 	unit.updatePos()
 	# redraw screen
-	screen.drawList(resourceManager.drawResources(), textStyle.lineHeight, [50,50])
+	screen.draw_list(resourceManager.drawResources(), textStyle.lineHeight, [50,50])
 	# unit_list.draw(screen)
 	screen.screen.blit(unit.image, unit.rect)
 	pygame.display.update()
