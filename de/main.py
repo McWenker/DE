@@ -83,7 +83,7 @@ while True:
 
 	unit.updatePos()
 	# redraw screen
-	screen.draw_list(resourceManager.drawResources(), textStyle.lineHeight, [50,50])
+	screen.draw_list(resourceManager.drawResources(), textStyle.lineHeight, [30,50])
 	# unit_list.draw(screen)
 	screen.screen.blit(unit.image, unit.rect)
 	pygame.display.update()

@@ -19,7 +19,7 @@ class Unit(pygame.sprite.Sprite):
 		self.speed = 10
 		
 
-		self.image = pygame.image.load('worker.pn')
+		self.image = pygame.image.load('worker.png')
 
 		self.rect = self.image.get_rect()
 		self.currentpos = Vec2d([self.rect.x, self.rect.y])
