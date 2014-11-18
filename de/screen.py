@@ -1,6 +1,6 @@
 import pygame
 from constants import *
-from gamemap import Map
+from mapgen import Map
 import textStyle
 
 class Screen(object):
