@@ -10,6 +10,7 @@ Y_MARG = int((SCREEN_HEIGHT - (ROWS * (TILE_SIZE + GAP_SIZE)))/2)
 
 # colors
 RED = (255, 0, 0)
+<<<<<<< HEAD
 L_BLUE = (70, 130, 180)
 D_BLUE = (50, 110, 160)
 BLACK = (0, 0, 0)
@@ -20,3 +21,11 @@ L_GREEN = (107, 142, 35)
 D_GREEN = (87, 122, 15)
 L_GREY = (139, 134, 130)
 D_GREY = (119, 124, 110)
+=======
+BLUE = (70, 130, 180)
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+BROWN = (139, 69, 19)
+GREEN = (107, 142, 35)
+GREY = (139, 134, 130)
+>>>>>>> 4ef4cb7fa0098cab22df57d2ea869a4a0870fd90

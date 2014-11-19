@@ -45,7 +45,11 @@ class Unit(pygame.sprite.Sprite):
 				self.currentpos = endpos
 
 			self.rect.centerx = self.currentpos[0]
+<<<<<<< HEAD
 			self.rect.centery = (self.currentpos[1] - 16)
+=======
+			self.rect.centery = self.currentpos[1]
+>>>>>>> 4ef4cb7fa0098cab22df57d2ea869a4a0870fd90
 		
 
 

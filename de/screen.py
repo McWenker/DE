@@ -16,6 +16,7 @@ class Screen(object):
 		for tile_x in range(COLUMNS):
 			for tile_y in range(ROWS):
 				left, top = self.top_left_convert(tile_x, tile_y)
+<<<<<<< HEAD
 				if main_map[tile_x][tile_y].terrain == 'DeepWater':
 					# draw dark blue, DeepWater tile
 					pygame.draw.rect(self.screen, D_BLUE, (left, top, TILE_SIZE, TILE_SIZE))
@@ -40,6 +41,20 @@ class Screen(object):
 				elif main_map[tile_x][tile_y].terrain == 'Granite':
 					# draw dark grey, Granite tile
 					pygame.draw.rect(self.screen, D_GREY, (left, top, TILE_SIZE, TILE_SIZE))
+=======
+				if main_map[tile_x][tile_y].terrain == 'Dirt':
+					# draw brown, Rock tile
+					pygame.draw.rect(self.screen, BROWN, (left, top, TILE_SIZE, TILE_SIZE))
+				elif main_map[tile_x][tile_y].terrain == 'Grass':
+					# draw green, Grass tile
+					pygame.draw.rect(self.screen, GREEN, (left, top, TILE_SIZE, TILE_SIZE))
+				elif main_map[tile_x][tile_y].terrain == 'Water':
+					# draw blue, Water tile
+					pygame.draw.rect(self.screen, BLUE, (left, top, TILE_SIZE, TILE_SIZE))
+				elif main_map[tile_x][tile_y].terrain == 'Rock':
+					# draw grey, Rock tile
+					pygame.draw.rect(self.screen, GREY, (left, top, TILE_SIZE, TILE_SIZE))
+>>>>>>> 4ef4cb7fa0098cab22df57d2ea869a4a0870fd90
 					
 	def top_left_convert(self, tile_x, tile_y):
 		# convert board coords into pixel coords
