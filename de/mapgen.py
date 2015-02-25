@@ -13,33 +13,20 @@ class Map(object):
 	# stores values for map grid
 	#
 	# Map.passable = passable tile (0)
-	def __init__(self):
+	def __init__(self, island_size=50):
 		# sets all tiles to passable
-		self.terrain = self.generate_map()
+		self.island_size = island_size
+		self.rocks = self.generate_map()
+		self.
+
 	
 	def generate_map(self):
 		# returns a map with all values set to 0
 		game_map = []
-		for i in range(ROWS):
+		for i in xrange(ROWS):
 			row = []
-			for j in range(COLUMNS):
-				x = 2*(perlin.noise2(i,j))
-				if x >= -2 and x < -1.7:
-					row.append(Tile(pos=(i,j), terrain='DeepWater'))
-				elif x >= -1.7 and x < -1.2:
-					row.append(Tile(pos=(i,j), terrain='ShalWater'))
-				elif x >= -1.2 and x < -0.5:
-					row.append(Tile(pos=(i,j), terrain='LowGrass'))
-				elif x >= -0.5 and x < 0.3:
-					row.append(Tile(pos=(i,j), terrain='HighGrass'))
-				elif x >= 0.3 and x < 0.7:
-					row.append(Tile(pos=(i,j), terrain='ShalDirt'))
-				elif x >= 0.7 and x < 1.2:
-					row.append(Tile(pos=(i,j), terrain='DeepDirt'))
-				elif x >= 1.2 and x < 1.7:
-					row.append(Tile(pos=(i,j), terrain='Rock'))
-				elif x >= 1.7 and x < 2:
-					row.append(Tile(pos=(i,j), terrain='Granite'))
+			for j in xrange(COLUMNS):
+				row.append(0)
 			game_map.append(row)
 		return game_map
 		

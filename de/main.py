@@ -3,7 +3,7 @@ from pygame.locals import *
 from constants import *
 from random import choice
 from screen import Screen
-from mapgen import Map
+from mapgen2 import Map
 from resourceManager import ResourceManager
 from textStyle import TextStyle
 from unit import Unit
@@ -16,7 +16,7 @@ gamemap = Map()
 
 
 # init our units
-unit = Unit(WHITE, 16, 32)
+unit = Unit(WHITE, TILE_SIZE, TILE_SIZE*2)
 # unit_list = pygame.sprite.Group()
 # unit_list.add(unit)
 
@@ -34,7 +34,7 @@ mouse_y = 0
 
 # 0 = impassable, for now
 passable_tiles = gamemap.get_passable_tiles(False)
-main_map = gamemap.generate_map()
+main_map = gamemap.
 highlightBox = (None,None)
 
 def terminate():

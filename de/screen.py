@@ -17,24 +17,27 @@ class Screen(object):
 			for tile_y in range(ROWS):
 				left, top = self.top_left_convert(tile_x, tile_y)
 
-				if main_map[tile_x][tile_y].terrain == 'DeepWater':
+				if main_map[tile_x][tile_y].terrain == 'Void':
+					# draw black, Void tile
+					pygame.draw.rect(self.screen, BLACK, (left, top, TILE_SIZE, TILE_SIZE))
+				elif main_map[tile_x][tile_y].terrain == 'DeepWater':
 					# draw dark blue, DeepWater tile
 					pygame.draw.rect(self.screen, D_BLUE, (left, top, TILE_SIZE, TILE_SIZE))
 				elif main_map[tile_x][tile_y].terrain == 'ShalWater':
 					# draw light blue, ShalWater tile
 					pygame.draw.rect(self.screen, L_BLUE, (left, top, TILE_SIZE, TILE_SIZE))
-				elif main_map[tile_x][tile_y].terrain == 'LowGrass':
+				elif main_map[tile_x][tile_y].terrain == 'Dirt1':
 					# draw light green, LowGrass tile
-					pygame.draw.rect(self.screen, L_GREEN, (left, top, TILE_SIZE, TILE_SIZE))
-				elif main_map[tile_x][tile_y].terrain == 'HighGrass':
+					pygame.draw.rect(self.screen, L_BROWN1, (left, top, TILE_SIZE, TILE_SIZE))
+				elif main_map[tile_x][tile_y].terrain == 'Dirt2':
 					# draw light green, HighGrass tile
-					pygame.draw.rect(self.screen, D_GREEN, (left, top, TILE_SIZE, TILE_SIZE))
-				elif main_map[tile_x][tile_y].terrain == 'ShalDirt':
+					pygame.draw.rect(self.screen, L_BROWN2, (left, top, TILE_SIZE, TILE_SIZE))
+				elif main_map[tile_x][tile_y].terrain == 'Dirt3':
 					# draw light brown, ShalDirt tile
-					pygame.draw.rect(self.screen, L_BROWN, (left, top, TILE_SIZE, TILE_SIZE))
-				elif main_map[tile_x][tile_y].terrain == 'DeepDirt':
+					pygame.draw.rect(self.screen, D_BROWN1, (left, top, TILE_SIZE, TILE_SIZE))
+				elif main_map[tile_x][tile_y].terrain == 'Dirt4':
 					# draw light brown, DeepDirt tile
-					pygame.draw.rect(self.screen, D_BROWN, (left, top, TILE_SIZE, TILE_SIZE))
+					pygame.draw.rect(self.screen, D_BROWN2, (left, top, TILE_SIZE, TILE_SIZE))
 				elif main_map[tile_x][tile_y].terrain == 'Rock':
 					# draw light grey, Rock tile
 					pygame.draw.rect(self.screen, L_GREY, (left, top, TILE_SIZE, TILE_SIZE))
